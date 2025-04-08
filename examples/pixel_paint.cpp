@@ -39,7 +39,7 @@ class PixelPaint final : public pxr::App {
 	void setup() override {
 		setTitle("Pixel Paint - Pixel Runtime Demo");
 		setSize(16, 16); // Logical canvas size (in pixels)
-		setPixelSize(100); // Each pixel is drawn as 100x100 screen pixels
+		setPixelSize(50); // Each pixel is drawn as 100x100 screen pixels
 		setVSync(true); // Enable vsync
 		background(pxr::Color::White);
 		currentColor = pxr::Color::Black;
