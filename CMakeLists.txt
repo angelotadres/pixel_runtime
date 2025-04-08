@@ -45,6 +45,7 @@ set(PXR_HEADERS
         ${PXR_PUB_HEADERS}/pixel_runtime.h
         ${PXR_PUB_HEADERS}/surface.h
         ${PXR_PUB_HEADERS}/types.h
+        include/pxr/math.h
 )
 
 # ─────────────────────────────────────────────────────────────
@@ -58,22 +59,23 @@ target_include_directories(pixel_runtime
         PRIVATE
         ${PXR_SRC_DIR}
         ${glad_SOURCE_DIR}/include
+        ${glm_SOURCE_DIR}
 )
 
 # Platform-specific OpenGL linking
 if (APPLE)
     target_link_libraries(pixel_runtime
-            PUBLIC glm
+            INTERFACE glm
             PRIVATE glfw glad "-framework OpenGL"
     )
 elseif (WIN32)
     target_link_libraries(pixel_runtime
-            PUBLIC glm
+            INTERFACE glm
             PRIVATE glfw glad opengl32
     )
 else()
     target_link_libraries(pixel_runtime
-            PUBLIC glm
+            INTERFACE glm
             PRIVATE glfw glad GL
     )
 endif()

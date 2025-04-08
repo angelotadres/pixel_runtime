@@ -16,6 +16,7 @@
  * - App lifecycle (app.h, app_entry.h)
  * - Color utilities (color.h)
  * - Input codes (input_codes.h)
+ * - Math (math.h)
  * - Surface drawing (surface.h)
  * - Type definitions (types.h)
  */
@@ -23,5 +24,6 @@
 #include "app_entry.h"
 #include "color.h"
 #include "input_codes.h"
+#include "math.h"
 #include "surface.h"
 #include "types.h"
