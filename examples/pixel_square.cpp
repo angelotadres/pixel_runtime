@@ -7,10 +7,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-#include "pxr/pixel_runtime.h"
-
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+#include <pxr/pixel_runtime.h>
 #include <iostream>
 
 /**
@@ -48,7 +45,7 @@ class PixelSquare final : public pxr::App {
 
 		centerX = getWidth() / 2;
 		centerY = getHeight() / 2;
-		sideLength = std::min(getWidth(), getHeight()) / 3.0f;
+		sideLength = pxr::math::min(getWidth(), getHeight()) / 3.0f;
 	}
 
 	/**

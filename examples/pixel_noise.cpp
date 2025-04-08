@@ -9,7 +9,7 @@
 
 #include <cstdint>
 #include <iostream>
-#include "pxr/pixel_runtime.h"
+#include <pxr/pixel_runtime.h>
 
 /**
  * @class PixelNoise

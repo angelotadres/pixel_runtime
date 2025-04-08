@@ -20,10 +20,10 @@
  * - Surface drawing (surface.h)
  * - Type definitions (types.h)
  */
-#include "app.h"
-#include "app_entry.h"
-#include "color.h"
-#include "input_codes.h"
-#include "math.h"
-#include "surface.h"
-#include "types.h"
+#include "pxr/app.h"
+#include "pxr/app_entry.h"
+#include "pxr/color.h"
+#include "pxr/input_codes.h"
+#include "pxr/math.h"
+#include "pxr/surface.h"
+#include "pxr/types.h"

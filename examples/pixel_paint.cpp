@@ -7,7 +7,7 @@
  * See LICENSE file in the project root for full license information.
  */
 
-#include "pxr/pixel_runtime.h"
+#include <pxr/pixel_runtime.h>
 
 /**
  * @class PixelPaint
