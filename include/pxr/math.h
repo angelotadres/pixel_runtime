@@ -198,5 +198,23 @@ namespace pxr::math {
 		return static_cast<uint32_t>(hash ^ (hash >> 16));
 	}
 
+	/**
+	 * @brief Fast pseudo-random RGB color generator using a hashed coordinate seed.
+	 *
+	 * Converts a hashed 2D position and optional frame/time input into a
+	 * pseudo-random color. Useful for generating dynamic noise, visual testing
+	 * patterns, or procedural effects in pixel-based rendering.
+	 *
+	 * @param x First coordinate or seed.
+	 * @param y Second coordinate or seed.
+	 * @param t Third input (e.g. time/frame).
+	 * @return A pseudo-random pxr::Color value.
+	 */
+	inline pxr::Color pseudoRandomColor(int x, int y, int t = 0) {
+		auto hash = pseudoRandom(x, y, t);
+		return pxr::Color{static_cast<uint8_t>(hash & 0xFF), static_cast<uint8_t>((hash >> 8) & 0xFF),
+						  static_cast<uint8_t>((hash >> 16) & 0xFF)};
+	}
+
 
 } // namespace pxr::math

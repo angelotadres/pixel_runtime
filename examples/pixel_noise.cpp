@@ -31,17 +31,10 @@ class PixelNoise final : public pxr::App {
 	}
 
 	void update() override {
-		const int w = getWidth();
-		const int h = getHeight();
-		const uint64_t frame = getFrameCount();
-
-		for (int y = 0; y < h; ++y) {
-			for (int x = 0; x < w; ++x) {
-				const uint32_t hash = pxr::math::pseudoRandom(x, y, frame);
-				const int r = hash & 0xFF;
-				const int g = (hash >> 8) & 0xFF;
-				const int b = (hash >> 16) & 0xFF;
-				drawPixel(x, y, r, g, b);
+		for (int x = 0; x < getWidth(); ++x) {
+			for (int y = 0; y < getHeight(); ++y) {
+				pxr::Color c = pxr::math::pseudoRandomColor(x, y, getFrameCount());
+				drawPixel(x, y, c);
 			}
 		}
 
